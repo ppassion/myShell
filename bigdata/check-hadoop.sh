@@ -2,7 +2,7 @@
 ###
 # @Author       : chyh
 # @Date         : 2021-04-05 13:08:26
- # @LastEditTime : 2021-04-05 19:34:39
+ # @LastEditTime : 2021-04-05 19:39:33
 # @Description  : 使用xcall获取3台机器上的进程信息，再检查该启动的是否都启动成功
 ###
 
@@ -26,7 +26,6 @@ for i in ${m01_should_have[@]}; do
     else
         m01_success=0
         echo "m01 failed  "${i}
-        break
     fi
 done
 
@@ -47,7 +46,6 @@ for i in ${m02_should_have[@]}; do
     else
         m02_success=0
         echo "m02 failed  "${i}
-        break
     fi
 done
 
@@ -68,7 +66,6 @@ for i in ${m03_should_have[@]}; do
     else
         m03_success=0
         echo "m03 failed  "${i}
-        break
     fi
 done
 
