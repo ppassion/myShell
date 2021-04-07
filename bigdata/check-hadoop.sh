@@ -2,7 +2,7 @@
 ###
 # @Author       : chyh
 # @Date         : 2021-04-05 13:08:26
-# @LastEditTime : 2021-04-05 19:49:04
+ # @LastEditTime : 2021-04-07 22:02:21
 # @Description  : 使用xcall获取3台机器上的进程信息，再检查该启动的是否都启动成功
 ###
 
@@ -17,6 +17,7 @@ xcall_result=$(xcall jps)
 m01=$(echo $xcall_result | awk '{ gsub(/ /,""); print }' | awk -F "m0" '{print $2}')
 m02=$(echo $xcall_result | awk '{ gsub(/ /,""); print }' | awk -F "m0" '{print $3}')
 m03=$(echo $xcall_result | awk '{ gsub(/ /,""); print }' | awk -F "m0" '{print $4}')
+
 
 m01_success=1
 for i in ${m01_should_have[@]}; do
