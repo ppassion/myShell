@@ -2,7 +2,7 @@
 ###
  # @Author       : chyh
  # @Date         : 2021-03-16 23:34:53
- # @LastEditTime : 2021-04-05 19:46:22
+ # @LastEditTime : 2021-04-13 22:21:39
  # @Description  : 启停hdfs/yarn并检查状态
 ### 
 
@@ -23,5 +23,5 @@ case $1 in
 esac
 
 
-./check-hadoop.sh
+./hadoop-check.sh
 

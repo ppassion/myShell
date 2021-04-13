@@ -1,32 +1,33 @@
 #!/bin/bash
 ###
- # @Author       : chyh
- # @Date         : 2021-04-07 22:03:20
- # @LastEditTime : 2021-04-09 13:28:20
- # @Description  : 调用其他脚本，检查所有组件的启动情况
-### 
-
+# @Author       : chyh
+# @Date         : 2021-04-07 22:03:20
+ # @LastEditTime : 2021-04-13 22:47:14
+# @Description  : 调用其他脚本，检查所有组件的启动情况
+###
 
 # hadoop
-./hadoop-check.sh > /dev/null
+./hadoop-check.sh >/dev/null
 hadoop_result=$?
-case "${hadoop_result}" in
-    0)
-        echo "hadoop success"
-    ;;
-    1)
-        echo "hadoop failed"
-    ;;
-esac
 
-# zookeeper
+#zookeeper
 ./zookeeper-check.sh > /dev/null
 zookeeper_result=$?
-case "${zookeeper_result}" in
+
+
+function printStatus() {
+    component_name=$1
+    component_result=$(eval echo '$'${component_name}_result)
+    case "${component_result}" in
     0)
-        echo "zookeeper success"
+        echo "$component_name success"
     ;;
     1)
-        echo "zookeeper failed"
+        echo "$component_name failed"
     ;;
-esac
+    esac
+}
+
+echo '====================================='
+printStatus hadoop
+printStatus zookeeper

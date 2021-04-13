@@ -2,11 +2,9 @@
 ###
  # @Author       : chyh
  # @Date         : 2021-04-09 12:36:19
- # @LastEditTime : 2021-04-09 13:01:43
+ # @LastEditTime : 2021-04-13 23:16:38
  # @Description  : Do not edit
 ### 
-
-source setup.sh
 
 case $1 in
 "start") {
