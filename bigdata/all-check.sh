@@ -2,7 +2,7 @@
 ###
 # @Author       : chyh
 # @Date         : 2021-04-07 22:03:20
- # @LastEditTime : 2021-04-13 23:17:37
+ # @LastEditTime : 2021-04-15 22:45:42
 # @Description  : 调用其他脚本，检查所有组件的启动情况
 ###
 
@@ -18,6 +18,9 @@ zookeeper_result=$?
 ./mysql-check.sh > /dev/null
 mysql_result=$?
 
+#hive
+./hive-check.sh > /dev/null
+hive_result=$?
 
 function printStatus() {
     component_name=$1
@@ -36,3 +39,4 @@ echo '====================================='
 printStatus hadoop
 printStatus zookeeper
 printStatus mysql
+printStatus hive
