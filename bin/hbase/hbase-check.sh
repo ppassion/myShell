@@ -1,14 +1,14 @@
 #!/bin/bash
 ###
-# @Author       : chyh
-# @Date         : 2021-04-05 13:08:26
- # @LastEditTime : 2021-04-19 22:25:42
-# @Description  : 使用xcall获取3台机器上的进程信息，再检查该启动的是否都启动成功
-###
+ # @Author       : chyh
+ # @Date         : 2021-04-19 22:07:24
+ # @LastEditTime : 2021-04-19 22:26:21
+ # @Description  : Do not edit
+### 
 
-m01_should_have=('DataNode' 'SecondaryNameNode' 'NameNode' 'ResourceManager' 'NodeManager' 'JobHistoryServer')
-m02_should_have=('DataNode' 'NodeManager')
-m03_should_have=('DataNode' 'NodeManager')
+m01_should_have=('HMaster' 'HRegionServer')
+m02_should_have=('HMaster' 'HRegionServer')
+m03_should_have=('HRegionServer')
 
 xcall_result=$(xcall jps)
 
