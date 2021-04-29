@@ -2,7 +2,7 @@
 ###
 # @Author       : chyh
 # @Date         : 2021-04-05 13:08:26
- # @LastEditTime : 2021-04-19 22:25:42
+ # @LastEditTime : 2021-04-29 22:45:39
 # @Description  : 使用xcall获取3台机器上的进程信息，再检查该启动的是否都启动成功
 ###
 
@@ -23,10 +23,13 @@ function printStatus() {
     server_name=$1
     server_should_have=$(eval echo '${'${server_name}_should_have'[@]}')
     server_has=$(eval echo '$'${server_name}_has)
+    echo $server_has
 
     server_status=0
 
     for i in ${server_should_have[@]}; do
+        echo $i
+        echo $server_status
         if [[ $server_has =~ $i ]];
         then
             echo "$server_name success "${i}

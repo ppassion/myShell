@@ -2,7 +2,7 @@
 ###
 # @Author       : chyh
 # @Date         : 2021-04-07 22:03:20
- # @LastEditTime : 2021-04-15 22:45:42
+ # @LastEditTime : 2021-04-23 22:27:36
 # @Description  : 调用其他脚本，检查所有组件的启动情况
 ###
 
@@ -22,6 +22,10 @@ mysql_result=$?
 ./hive/hive-check.sh > /dev/null
 hive_result=$?
 
+#hbase
+./hbase/hbase-check.sh > /dev/null
+hbase_result=$?
+
 function printStatus() {
     component_name=$1
     component_result=$(eval echo '$'${component_name}_result)
@@ -40,3 +44,4 @@ printStatus hadoop
 printStatus zookeeper
 printStatus mysql
 printStatus hive
+printStatus hbase
